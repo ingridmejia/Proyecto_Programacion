@@ -1,3 +1,4 @@
+# juego para nxm
 a = [[(8,8),(1,10)],[(10,1),(2,2)]]
 
 # aqui identifica estrategias de dominancia estricta para reducir a una matriz 2x2
