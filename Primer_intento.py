@@ -1,7 +1,3 @@
-Created on Mon May  6 17:15:38 2019
-
-@author: prestamour
-"""
 
 class Point:
     def __init__(self,X,Y):
