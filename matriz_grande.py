@@ -13,7 +13,7 @@ def comparar_filas(i,l):
         else:
             cond == a[i][0][0] < a[l][0][0]
             cond=cond ^ a[i][j][0] < [l][j][0]
-            ponga_fila_enceros(i)
+            ponga_fila_en_x(i)
             
 def comparar_columnas(i,l):
     cond == a[i][0][1] >= a[l][0][1]
@@ -21,16 +21,16 @@ def comparar_columnas(i,l):
         cond=cond ^ a[i][j][1] >= [l][j][1]
         
         if cond == True :
-            ponga_columna_enceros(l)
+            ponga_columna_en_x(l)
         else:
             cond == a[i][0][1] < a[l][0][1]
             cond=cond ^ a[i][j][1] < [l][j][1]
             ponga_columna_en_ceros(i)
-    
-def ponga_columna_en_ceros(z):
+    #es mejor ponerlas en x para luego poderlas eliminar con  remove
+def ponga_columna_en_x(z):
   # toca poner las tuplas en ceros   
     
-def ponga_fila_enceros(y):
+def ponga_fila_en_x(y):
     
 
 # PARA COMPARAR TODAS LAS FILAS CON CADA FILA MENOS CON SI MISMA PARA ELIMINAR POR DOMINANCIA ESTRICTA
