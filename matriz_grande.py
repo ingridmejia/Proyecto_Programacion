@@ -39,4 +39,8 @@ for i in range (0,c-2):
     for l in range (i+1,c-1):
         comparar_filas(i,l)
         
+ # https://es.stackoverflow.com/questions/71462/eliminar-filas-y-columnas-de-una-matriz-tomando-en-cuanta-sus-elementos
+# ese link es para importar una libreria que elimina filas y columnas de una matriz tomando en cuenta sus elementos 
+# https://codeday.me/es/qa/20190120/97078.html otra opcion 
+        
     
