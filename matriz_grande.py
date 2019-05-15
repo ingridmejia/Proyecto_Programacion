@@ -1,31 +1,37 @@
 # juego para nxm
-a = [[(8,8),(1,10)],[(10,1),(2,2)]]
+import numpy as np 
+a = np.array[[(8,8),(1,10)],[(10,1),(2,2)]]
 b= []
 
 # aqui identifica estrategias de dominancia estricta para reducir a una matriz 2x2
-
+########
+#dudas too los cositos van en parentesis ?
 def comparar_filas(i,l):
     cond == a[i][0][0] >= a[l][0][0]
     for j in range (1,b-1):
-        cond=cond ^ a[i][j][0] >= [l][j][0]
+        cond=cond ^ a[i][j][0] >= a[l][j][0]
         
         if cond == True :
-            ponga_fila-enceros(l)
+            np.delete(a,l,axis=1)
+            #ponga_fila-enceros(l)
         else:
             cond == a[i][0][0] < a[l][0][0]
-            cond=cond ^ a[i][j][0] < [l][j][0]
-            ponga_fila_en_x(i)
+            cond=cond ^ a[i][j][0] < a[l][j][0]
+            np.delete(a,i,axis=1)
+            #ponga_fila_en_x(i)
             
 def comparar_columnas(i,l):
     cond == a[i][0][1] >= a[l][0][1]
     for j in range (1,b-1):
-        cond=cond ^ a[i][j][1] >= [l][j][1]
+        cond=cond ^ a[i][j][1] >= a[l][j][1]
         
         if cond == True :
+            np.delete(a,l,axis=1)
             #ponga_columna_en_x(l) ## en vez de esto lo elimino usando la funcion de numpy 
         else:
             cond == a[i][0][1] < a[l][0][1]
-            cond=cond ^ a[i][j][1] < [l][j][1]
+            cond=cond ^ a[i][j][1] < a[l][j][1]
+            np.delete(a,i,axis=1)
             #ponga_columna_en_ceros(i)
     #es mejor ponerlas en x para luego poderlas eliminar con  remove
     # es mjor eliminarlas de una para ir reduciendo la matriz 
