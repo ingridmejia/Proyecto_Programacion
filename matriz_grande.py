@@ -1,5 +1,6 @@
 # juego para nxm
 a = [[(8,8),(1,10)],[(10,1),(2,2)]]
+b= []
 
 # aqui identifica estrategias de dominancia estricta para reducir a una matriz 2x2
 
@@ -21,12 +22,15 @@ def comparar_columnas(i,l):
         cond=cond ^ a[i][j][1] >= [l][j][1]
         
         if cond == True :
-            ponga_columna_en_x(l)
+            #ponga_columna_en_x(l) ## en vez de esto lo elimino usando la funcion de numpy 
         else:
             cond == a[i][0][1] < a[l][0][1]
             cond=cond ^ a[i][j][1] < [l][j][1]
-            ponga_columna_en_ceros(i)
+            #ponga_columna_en_ceros(i)
     #es mejor ponerlas en x para luego poderlas eliminar con  remove
+    # es mjor eliminarlas de una para ir reduciendo la matriz 
+
+ # asi ya no necesitaria estas dos funciones 
 def ponga_columna_en_x(z):
   # toca poner las tuplas en ceros   
     
