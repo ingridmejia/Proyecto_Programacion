@@ -2,13 +2,13 @@
 a = [[(8,8),(1,10)],[(10,1),(2,2)]]
 lista = []
 
-print (a [0]) #primera parte de la lista
+#print (a [0]) #primera parte de la lista
 
-print(a[0][0])#primera tupla de la lista
+#print(a[0][0])#primera tupla de la lista
 
-print(a[0][0][0]) # primer elemento de la tupla
+#print(a[0][0][0]) # primer elemento de la tupla
 
-print(a[0][1][0])# primera parte de la lista, segunda tupla, primer elemento
+#print(a[0][1][0])# primera parte de la lista, segunda tupla, primer elemento
 
 
 
@@ -92,4 +92,7 @@ def comparar_los_y ():
         lista.append(a[0][1][1])
         #print(a[0][1][1])
     print lista
+comparar_los_x() # esto me da los xi 
+comparar_los_y()# esto me da los xi y yi 
+# necesito compararlos ahora todos esta lista con mi lista de tuplas inicial
     
