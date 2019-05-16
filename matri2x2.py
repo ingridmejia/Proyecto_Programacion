@@ -1,15 +1,18 @@
-
-a = [[(8,8),(1,10)],[(10,1),(2,2)]]
+a =[]
 lista = []
+respuesta = ""
+while respuesta.lower()!="no":
+    fila=a.append(input("Ingrese la fila de la siguiente manera [(a,b),(c,d)...(y,z)]:"))
+    respuesta=raw_input(" Si desea ingresar otra fila diga 'si' de lo contrario diga 'no':")
+print a
 
+#a = [[(8,8),(1,10)],[(10,1),(2,2)]]
 #print (a [0]) #primera parte de la lista
-
 #print(a[0][0])#primera tupla de la lista
-
 #print(a[0][0][0]) # primer elemento de la tupla
-
 #print(a[0][1][0])# primera parte de la lista, segunda tupla, primer elemento
-
+################
+#ME FALTA PARA CUANDO SON IGUALES AHI QUE HAGO ?
 
 
 # comparar los Xi
@@ -17,11 +20,13 @@ lista = []
 
 
 # compara 8 vs 1
-# no se que argumento recibiria esto 
+# ESTO NO RECIBE NINGUN ARGU,ENTO
 def comparar_los_x ():
     if a[0][0][0] > a[0][1][0]:
         lista.append(a[0][0][0])
     #print ("los Xi candidatos a equilibrio de nash son:"a[0][0][0])
+    elif a[0][0][0] == a[0][1][0]:
+        lista.append(a[0][0][0])
 
     else:
         lista.append(a[0][1][0])
