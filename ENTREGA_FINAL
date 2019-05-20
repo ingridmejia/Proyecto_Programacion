@@ -1,0 +1,55 @@
+Universidad del Rosario
+Programación de Computadores
+Ingrid Lizbeth Mejía Briceño
+Finanzas y comercio internacional
+
+
+ENTREGA FINAL
+
+REPOSITORIO: https://github.com/ingridmejia/Proyecto_Programacion
+
+1)	RESUMEN EJECUTIVO:
+
+Descripción final del problema identificado:
+El problema que inicialmente se identifico es la falta de una herramienta computacional para los estudiantes de microeconomía II, más específicamente para toda persona que quiera aprender teoría de juegos. En un principio se quería crear era un instrumento que funcionara como una calculadora de derivadas o integrales, para que de esta manera los estudiantes pudieran recurrir al programa y comparar las soluciones obtenidas tanto en la calculadora como en los ejercicios realizados por ellos.
+
+Solución propuesta: 
+La propuesta ante la problemática identificada es construir una herramienta computacional por medio de los conocimientos adquiridos en programación y microeconomía II, para así generar un programa capaz de identificar las matrices de pagos que se dan en teoría de juegos y con esto aplicar un razonamiento teórico y lógico por medio de códigos que logren mostrar al estudiante los equilibrios de Nash, para así compararlo con los ejercicios hechos por él. Para llevar a cabo este proyecto se tienen como objetivos los siguientes:
+	Programar de una manera adecuada y clara los principales razonamientos de teoría de juegos empleada por los estudiantes de microeconomía II. 
+
+	Se busca en la herramienta que pueda llevar a cabo análisis con matrices mxn, para así minimizar el tiempo empleado al encontrar los equilibrios de Nash.
+
+	Combinar los conocimientos adquiridos en las materias de programación de computadores y microeconomía II. Poder llevar a cabo problemas tradicionales como el dilema del prisionero, batalla de los sexos, juego de la gallina, entre otros en estrategias puras.
+
+Resumen del trabajo desarrollado:
+El objetivo inicial es desarrollar un programa computacional que pueda resolver problemas de teoría de juegos sin importar el tamaño de la matriz. En principio consideramos el “dilema del prisionero”, el cual es un problema básico de teoría de juegos de microeconomía II, para así poder programar lo más básico de la teoría y luego expandirlo a matrices mxn. Para esta consideración se tomó como matriz inicial:
+ 
+	Confiesa	No Confiesa
+Confiesa	8,8	1,10
+No Confiesa	10,1	2,2
+
+
+Inicialmente se quería plantear un código con base a una clase point para poder comparar los puntos dados desde una matriz 2x2 ya que los pagos que se plantean en teoría de juegos son de dos componentes, una para el jugador 1 (Xi) y otro para el jugador 2 (Yi), de manera que un cuadro en la matriz seria (Xi, Yi) variando según las estrategias que elija cada jugador y como cada uno trate de predecir el otro jugador que elegirá.
+El principal problema que se enfrentó al tratar de iniciar la programación de la herramienta era como comparar termino a término tanto los Xi y los Yi, para hallar el óptimo evitando incentivos a desviarse e identificando adecuadamente los equilibrios de Nash por medio de funciones pequeñas para cualquier matriz.
+Para el ejercicio que se quería llevar a cabo la clase point no funciono, ya que esta solo permitía comparar el punto como un conjunto mas no los Xi y los Yi por separado, por lo que se recurrió a otro método, tomando como base las listas para solucionar el problema de los pagos (Xi,Yi), se  tomó tuplas dentro de las listas y se puso la matriz 2x2 que habíamos considerado anteriormente para la prueba de que identificaba los posibles puntos a equilibrios de Nash, con el código generado se logró la identificación mediante el uso del enunciado IF.
+Posteriormente dimos paso a tratar de expandir el código a una matriz nxm donde n puede ser igual a m según el caso a considerar. Para poder comparar una matriz de este tamaño recurrimos a el enunciado FOR, el cual utilizamos por medio de ciclos para así lograr recorrer la matriz tanto por columnas y filas, a partir de ahí lo que se plantea es incorporar los conceptos de teoría de juegos de tal manera que se entienda dominancia estricta, eliminación iterada de estrategias estrictamente dominadas y otras.
+Así que desde el ciclo for necesitamos comparar columna a columna y fila a fila e ir eliminando la que se dominada por otra en términos de que es menor que otra fila o columna sin importar la ubicación de esta; de esta manera para la eliminación de las mismas se considera e importa la librería NUMPY, la cual es una herramienta que se usa para crear e interactuar con matrices, después de la eliminación de las filas y columnas necesarias el problema va a quedar restringido nuevamente a una matriz 2x2 donde retomaremos el código inicial para listas y tuplas.
+Una vez realizado esto el problema que ahora se debe tener en cuenta es la comparación de la primera lista que es la introducida por el usuario y la lista que se genera de la identificación de los candidatos a equilibrios de Nash, y en como poder hacer que el programa reconozca que los elementos de una tupla que se encuentran en la primera lista, están en la segunda lista y que se impriman los equilibrios de Nash si la matriz los tiene. Para esto utilizamos la función equilibrios que permite comparar la lista dada por el usuario y la lista creada por Comparar_los_xi( ) y Comparar_los_yi( ) para asi poder ver que coordenadas cumplen con las condiciones para el equilibrio de nash. Sin embargo para poder hacer esto con la función debimos cambiar las tuplas que habíamos considerado, por listas, lo que terminaría en un código de listas de listas de listas, pero que permite el objetivo inicial de la herramienta.
+
+
+ 2) FUNCIONALIDAD DE LA HERRAMIENTA:  
+La herramienta que se logró crear puede identificar exitosamente los equilibrios de Nash, utilizando los criterios de dominancia estricta, eliminación iterada de estrategias estrictamente dominadas en estrategias puras para los puntos dados, esto lo hicimos con ayuda de enunciados IF y ciclos FOR. Esto para reducir una matriz nxm a una matriz dos por dos, en la cual se buscó implementar la teoría de la función de mejor respuesta para un juego de 2 personas con diferentes estrategias.
+
+Esta herramienta ayuda al problema identificado ya que se logró el objetivo inicial que era crear una especie de calculadora para teoría de juegos en estrategias puras para poder ayudar a todo aquel que quiera aprender teoría de juegos.
+
+
+3) DESCRIPCIÓN DE LA HERRAMIENTA:
+
+La herramienta que logramos crear como simulación de una calculadora para teoría de juegos en estrategias puras consigue decir al usuario cuales son los equilibrios de Nash de haber en el problema que el usuario le plantee; para esto usamos diferentes códigos y ciclos que se aprendieron durante el transcurso del semestre, entre ellos están los factores claves para la implementación del código que son principalmente:
+Según la matriz que ingrese el usuario sui esta es de un tamaño nxm se recurre a las funciones comparar_filas y comparar_columnas para lograr reducir la matriz a una 2x2
+Comparar_filas( ): Compara las filas de las matrices de pagos que el usuario ingresa para posteriormente eliminarlas si se determina que una domina a la otra, es decir que todos los elementos de esa fila son mayores a la cual se comparan
+Comparar_columnas( ): Compara las columnas de las matrices de pagos que el usuario ingresa para posteriormente eliminarlas si se determina que una domina a la otra, es decir que todos los elementos de esa columna son mayores a la cual se comparan.
+Librería numpy: En este código la implementamos para usar las funciones que nos crean la matriz y para en los funciones de comparar_filas y comparar_columnas eliminar la fila o columna respectivamente para que logremos llegar a una matriz 2x2.
+Comparar_los_xi( ): Esta función sirve para comparar los elementos de una matriz 2x2  identificar cuales son los candidatos a equilibrios de Nash de la primera coordenada xi.
+Comparar_los_yi( ):Esta función sirve para comparar los elementos de una matriz 2x2  identificar cuáles son los candidatos a equilibrios de Nash de la segunda coordenada yi.
+Equilibrio( ): Esta es la función que nos da el equilibrio de Nash, lo que principalmente hace es comparar la lista inicial que nos da el usuario con la generada por Comparar_los_xi( ) y Comparar_los_yi( ) para asi poder ver que coordenadas cumplen con las condiciones para el equilibrio de Nash.
