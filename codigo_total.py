@@ -3,9 +3,9 @@ a =[]
 lista = []
 respuesta = ""
 while respuesta.lower()!="no":
-    fila=a.append(input("Ingrese la fila de la siguiente manera [(a,b),(c,d)...(y,z)]:"))
-    respuesta=raw_input(" Si desea ingresar otra fila diga 'si' de lo contrario diga 'no':")
-print a
+    fila=a.append(input("Ingrese la fila de la siguiente manera [[a,b],[c,d]...[y,z]]:"))
+    respuesta=input(" Si desea ingresar otra fila diga 'si' de lo contrario diga 'no':")
+print (a)
 
 # aqui identifica estrategias de dominancia estricta para reducir a una matriz 2x2
 ########
@@ -40,19 +40,22 @@ def comparar_columnas(i,l):
     #es mejor ponerlas en x para luego poderlas eliminar con  remove
     # es mjor eliminarlas de una para ir reduciendo la matriz 
 
- # asi ya no necesitaria estas dos funciones 
-def ponga_columna_en_x(z):
-  # toca poner las tuplas en ceros   
-    
-def ponga_fila_en_x(y):
-    
+ 
+
 
 # PARA COMPARAR TODAS LAS FILAS CON CADA FILA MENOS CON SI MISMA PARA ELIMINAR POR DOMINANCIA ESTRICTA
     
 for i in range (0,c-2):
     for l in range (i+1,c-1):
         comparar_filas(i,l)
+        
+for i in range (0,c-2):
+    for l in range (i+1,c-1):
+        comparar_columnas(i,l)
+        
+#hasta aqui reduce a una matrioz 2*2        
 ###############################
+
         
 # comparar los Xi
 
@@ -96,7 +99,7 @@ def comparar_los_x ():
         lista.append(a[1][0][0])
 
     #print(a[1][0][0])
-    print lista
+    print (lista)
 
 
 ######################################
@@ -135,7 +138,34 @@ def comparar_los_y ():
     else:
         lista.append(a[0][1][1])
         #print(a[0][1][1])
-    print lista
+    print (lista)
+  
+def equilibrios ():
+    final=[]
+    for i in range (0,int(len(lista)/2)):
+        for j in range (int(len(lista)/2),int(len(lista))):
+            lista1 =[] 
+            lista1.append(lista[i])
+            lista1.append(lista[j])
+            print(lista1)
+            for z in range (2):
+                for p in range(2):
+                    print(a[z][p])
+                    if lista1 == a[z][p]:
+                        final.append(lista1)
+    print(final)
+    if len(final)==0:
+        print ("no hay equilibrios de nash")
+    else:
+        print ("el equilibrio de nash es:" )
+        print(final)
+    return final
+    
+            
+    
+
 comparar_los_x() # esto me da los xi 
-comparar_los_y()# esto me da los xi y yi 
-# necesito compararlos ahora todos esta lista con mi lista de tuplas inicial
+comparar_los_y() # esto me da los xi y yi 
+equilibrios ()
+#para poder comparar y hacer los equilibrios tocacambiar la idea de poner los puntos como tuplas, por ponerlos como listas 
+#el codigo final contempla desde el inicio listas de listas de listas.
