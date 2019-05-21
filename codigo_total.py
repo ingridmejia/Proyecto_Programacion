@@ -1,5 +1,6 @@
 a =[[[1,0],[0,1],[2,1]],[[0,0],[2,4],[4,3]],[[2,1],[1,0],[3,2]]]
-
+#a =[[[2,1],[0,0]],[[0,0],[1,2]] # batalla de los sexos
+#a =[[[1,-1],[-1,1]],[[-1,1],[1,-1]]
 lista = []
 respuesta = ""
 #while respuesta.lower()!="no":
@@ -199,3 +200,4 @@ for i in range (0,c-2):
         
 comparar_los_x() # esto me da los xi 
 comparar_los_y() # esto me da los xi y yi 
+equilibrios ()
